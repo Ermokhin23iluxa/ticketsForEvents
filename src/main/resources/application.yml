@@ -1,0 +1,31 @@
+server:
+  port: 6060
+spring:
+  thymeleaf:
+    enabled: true
+    prefix: classpath:/templates/
+    suffix: .html
+  freemarker:
+    expose-request-attributes: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/EVENTS
+    username: postgres
+    password: 19788707
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  reactor:
+    debug-agent:
+      enabled: true
+  security:
+    jwt:
+      secret_key: 132a13856ac9bb0cca10a7c0b6d636697c6c273f7cc313da857fdf9acd81ab8c
+      access_token_expiration: 36000000 # 10 hours
+      refresh_token_expiration: 252000000 # 7 days
